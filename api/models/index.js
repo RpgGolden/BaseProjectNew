@@ -2,6 +2,9 @@ import { Sequelize } from "sequelize";
 import User from "./user.js";
 import TokenSchema from "./token-model.js";
 
+import 'dotenv/config';
+
+
 const { DB_USER, DB_PWD, DB_HOST, DB_PORT, DB_NAME } = process.env;
 
 export const models = {

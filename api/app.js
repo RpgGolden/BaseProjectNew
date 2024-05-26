@@ -3,6 +3,8 @@ import cookieParser from "cookie-parser";
 import corsMiddleware from "./middlewares/cors.js";
 // import dbUtils from './utils/db.js';
 
+import 'dotenv/config';
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
