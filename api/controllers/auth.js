@@ -5,7 +5,6 @@ import AuthDto from '../dtos/auth-dto.js';
 import { AppErrorAlreadyExists, AppErrorMissing } from '../utils/errors.js';
 import User from '../models/user.js';
 import TokenModel from '../models/token-model.js';
-import Driver from '../models/driver.js';
 import jwtUtils from '../utils/jwt.js';
 
 import 'dotenv/config';
@@ -29,7 +28,6 @@ export default {
 
             const user = await User.create({ name, surname, patronymic, login, password: hashedPassword });
 
-            const driver = await Driver.create({ name, surname, patronymic, userId: user.id });
 
             // Генерируем и сохраняем JWT-токены
             const { accessToken, refreshToken } = jwtUtils.generate({ id: user.id });
